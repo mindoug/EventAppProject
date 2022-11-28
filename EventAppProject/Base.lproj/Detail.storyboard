@@ -11,23 +11,78 @@
         <!--Detail-->
         <scene sceneID="4sI-TL-MY7">
             <objects>
-                <viewController id="g9e-vQ-f4d" sceneMemberID="viewController">
+                <viewController id="g9e-vQ-f4d" customClass="DetailViewController" customModule="EventAppProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vco-ic-sXV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="CdP-Ey-Sq7">
+                                <rect key="frame" x="20" y="95" width="346.66666666666669" height="15"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="T8F-Lz-z8v">
+                                        <rect key="frame" x="0.0" y="3" width="16.666666666666668" height="9.3333333333333321"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="0pK-Pg-vbJ"/>
+                                            <constraint firstAttribute="width" constant="16.5" id="UyK-IR-iQr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hiking event - Expert experience..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGw-6M-5Nf">
+                                        <rect key="frame" x="61.666666666666686" y="0.0" width="223" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZIu-aa-5Tg">
+                                        <rect key="frame" x="329.66666666666669" y="0.33333333333333215" width="17" height="14.666666666666668"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="I8o-Ip-x7e"/>
+                                            <constraint firstAttribute="width" constant="17.329999999999998" id="osu-QP-0hd"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QTQ-RE-so4">
+                                <rect key="frame" x="0.0" y="138" width="393" height="714"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Oc-wW-cNp">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ssI-5Y-Ncw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="QTQ-RE-so4" firstAttribute="leading" secondItem="ssI-5Y-Ncw" secondAttribute="leading" id="3UE-kb-2xj"/>
+                            <constraint firstItem="CdP-Ey-Sq7" firstAttribute="top" secondItem="ssI-5Y-Ncw" secondAttribute="top" constant="36" id="87o-eW-5Tn"/>
+                            <constraint firstItem="CdP-Ey-Sq7" firstAttribute="leading" secondItem="ssI-5Y-Ncw" secondAttribute="leading" constant="20" id="DAa-fS-3gX"/>
+                            <constraint firstItem="QTQ-RE-so4" firstAttribute="top" secondItem="CdP-Ey-Sq7" secondAttribute="bottom" constant="28" id="WdV-x2-fwW"/>
+                            <constraint firstAttribute="bottom" secondItem="QTQ-RE-so4" secondAttribute="bottom" id="Xbb-nP-bh7"/>
+                            <constraint firstItem="ssI-5Y-Ncw" firstAttribute="trailing" secondItem="QTQ-RE-so4" secondAttribute="trailing" id="ruz-rR-Anl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Detail" image="menucard" catalog="system" selectedImage="menucard.fill" id="UoK-Lt-RmT"/>
+                    <connections>
+                        <outlet property="collectionView" destination="QTQ-RE-so4" id="KYW-g5-Gad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNx-6n-NNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417.5572519083969" y="33.802816901408455"/>
+            <point key="canvasLocation" x="1826.7175572519084" y="-61.267605633802823"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <image name="bookmark" catalog="system" width="110" height="128"/>
         <image name="menucard" catalog="system" width="108" height="128"/>
         <image name="menucard.fill" catalog="system" width="105" height="128"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

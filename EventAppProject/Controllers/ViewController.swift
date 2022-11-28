@@ -169,8 +169,7 @@ class ViewController: UIViewController {
             ]),
             Section(type: .categories, items: [
             Item(), Item(), Item(), Item(), Item()
-            ])
-          
+            ]),
         ]
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections(sections)
